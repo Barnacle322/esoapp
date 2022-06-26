@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'event_registration/event_manager.css' %}">
+    <title>Event Manager</title>
+</head>
+<body>
+
+    <div class="background"></div>
+    <div class="main-content">
+        <div class="event-list">
+            
+            {% for event in events %}
+            <div class="event">
+                <div class="event-name">
+                    {{ event.name }}
+                </div>
+
+                <div class="event-description">
+                    {{ event.description }}
+                </div>
+
+                <div class="event-location">
+                    {{ event.location }}
+                </div>
+
+                <div class="event-start">
+                    Starts in {{ event.start_time|timeuntil }}
+                </div>
+
+                <div>
+                    {{ event.created_by }}
+                </div>
+                
+                {% if request.user.id != registrations|get_item:event.id %}
+                <div>
+                    <a href="{% url 'event_register' event.id %}">Register</a>
+                </div>
+                {% else %}
+                <div>
+                    <a href="{% url 'event_unregister' event.id %}">Unregister</a>
+                </div>
+                {% endif %}
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <nav class="navbar">
+        <div></div>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'event_creation/event_manager.css' %}">
+    <title>Event Manager</title>
+</head>
+<body>
+
+    <div class="background"></div>
+    <div class="main-content">
+        <div class="event-list">
+            {% for event in events%}
+            <div class="event">
+                <div class="event-name">
+                    {{ event.name }}
+                </div>
+                <div class="event-description">
+                    {{ event.description }}
+                </div>
+                <div class="event-location">
+                    {{ event.location }}
+                </div>
+                <div class="event-start">
+                    Starts in {{ event.start_time|timeuntil }}
+                </div>
+                <div>
+                    {{ event.created_by }}
+                </div>
+                <div>
+                    <a href="{% url 'event_update' event.id %}">Edit</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="event-manager">
+            <a href="{% url 'event_manager' %}">Event Manager</a>
+        </div>
+        <div class="create-event">
+            <a href="{% url 'event_create' %}">Create Event</a>
+        </div>
+    </nav>
+</body>
+</html>

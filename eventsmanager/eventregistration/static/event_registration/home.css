@@ -1,0 +1,148 @@
+html, body {
+    margin:0;
+    padding:0;
+    font-family: Montserrat;
+    font-size: 25px;
+}
+
+.background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #e2e8f0;
+}
+
+.content {
+    position: fixed;    
+    height: calc(100% - 100px);
+    width: calc(100% - 100px);
+    top: 100px;
+    margin-bottom: 100px;
+    padding: 0 50px 0 50px;
+    overflow-y: auto;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    padding: 20px 100px 100px 100px;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #3f3f3f;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.info-logo {
+    width: 100%;
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    width: calc(100% - 40px);
+    height: 100px;
+    column-gap: 20px;
+    padding: 0 20px 0 20px;
+    align-items: center;
+    justify-content: end;
+    background-color: white;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+.user-login {
+    color:black;
+    text-decoration: none;
+}
+
+.login-button {
+    height: 50px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.144);
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.events-button {
+    height: 50px;
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.144);
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.events-button-text {
+    color:black;
+    text-decoration: none;
+}
+
+.events-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.login-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.event-information {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    padding: 20px 100px 20px 100px;
+}
+
+.past-events-button {
+    height: 50px;
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.144);
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+    text-decoration: none;
+    color:black;
+}
+
+.registrations-button-text {
+    color:black;
+    text-decoration: none;
+}
+
+.registrations-button {
+    height: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.144);
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+    text-decoration: none;
+}

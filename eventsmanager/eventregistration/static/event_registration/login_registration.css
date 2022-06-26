@@ -1,0 +1,83 @@
+html, body {
+    margin:0;
+    padding:0;
+    font-family: Montserrat;
+    font-size: 25px;
+}
+
+.background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #e2e8f0;
+}
+
+.content {
+    position: fixed;    
+    height: 100%;
+    width: calc(100% - 100px);
+    padding: 0 50px 0 50px;
+    overflow-y: auto;
+}
+.center-prompt {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.prompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 300px;
+    padding: 0 20px 0 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.username {
+    width: 200px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.144);
+    margin: 8px 68px;
+    border: 0px solid #ccc;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.password {
+    width: 200px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.144);
+    margin: 8px 68px;
+    border: 0px;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.login-button {
+    width: 200px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.144);
+    margin: 8px 68px;
+    border: 0px;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.text {
+    font-size: 20px;
+}
