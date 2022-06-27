@@ -29,6 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
+CSRF_TRUSTED_ORIGINS = ['https://6fb0-2001-67c-2564-331-81ff-36df-b444-3b62.ngrok.io','https://*.127.0.0.1']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'eventcreation.apps.EventcreationConfig',
     'eventregistration.apps.EventregistrationConfig',
+    'telegramintegration.apps.TelegramintegrationConfig',
 ]
 
 MIDDLEWARE = [

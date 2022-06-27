@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TG Integration</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</head>
+
+<body style="background-color: #ffffff">
+
+    <div style="position: absolute; margin-top: 5vh; margin-left: 5vw; height: 90vh; width: 90vw; border-radius: 5vh; background-color: var(--tg-theme-bg-color); box-shadow: 0 0 2vw#000000;">
+        <input id="username" type="text" placeholder="Username" onblur="getUsername()">
+        <input id="password" type="password" placeholder="Password" onblur="getPassword()">
+        <div id="usercard"></div>
+    </div>
+    
+</body>
+
+<script type="text/javascript">
+    const getUsername = () => {
+        var val = document.getElementById('username').value;
+        return val;
+    }
+
+    const getPassword = () => {
+        var val = document.getElementById('password').value;
+        return val;
+    }
+
+    Telegram.WebApp.ready();
+    let initData = Telegram.WebApp.initData || '';
+    let initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
+
+    
+    Telegram.WebApp.MainButton.setText('register').show().onClick(function () {
+        $.ajax('sendData/', {
+            method: 'POST',
+            data: {
+                _auth: initData,
+                username: getUsername(),
+                password: getPassword(),
+            },
+            dataType: 'json',
+
+            success: function (result) {
+                console.log('success');
+            },
+
+            error: function (xhr) {
+                console.log(xhr);
+            }
+        });
+        Telegram.WebApp.close();
+    });
+    
+</script>
+</html>

@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('eventregistration.urls')),
     path('mod/', include('eventcreation.urls')),
+    path('telegram/', include('telegramintegration.urls')),
 ]
 
 
